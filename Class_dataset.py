@@ -38,3 +38,21 @@ class CDataSet:
         plt.title('Comparação: Desenvolvido vs. Em Desenvolvimento')
         plt.ylabel('Expectativa de vida')
         plt.show()
+    
+    def correlacoes(self):
+        corr = self._df.corr(numeric_only=True)
+        plt.figure(figsize=(10, 8))
+        sns.heatmap(corr, annot=True, cmap='coolwarm')
+        plt.title('Mapa de Correlação')
+        plt.show()
+    
+    def top_paises(self):
+        ano = int(input("Digite o ano (ex: 2013): "))
+        top = self._df[self._df['Year'] == ano]
+        if top.empty:
+            print("Ano não encontrado.")
+            return
+        print("\nTop 5 Países com MAIOR expectativa de vida:")
+        print(top[['Country', 'Life expectancy ']].sort_values(by='Life expectancy ', ascending=False).head())
+        print("\nTop 5 Países com MENOR expectativa de vida:")
+        print(top[['Country', 'Life expectancy ']].sort_values(by='Life expectancy ').head())

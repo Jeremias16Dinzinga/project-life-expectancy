@@ -24,12 +24,10 @@ def menu():
             d.expectativa_ao_longo_dos_anos()
         elif opcao == '4':            
             d.comparacao_status()
-        elif opcao == '5':
-            print("Processando...")
-            #correlacoes()
-        elif opcao == '6':
-            print("Processando...")
-            #top_paises()
+        elif opcao == '5':        
+            d.correlacoes()
+        elif opcao == '6':            
+            d.top_paises()
         elif opcao == '7':
             print("Encerrando o programa. Até logo!")
             break
