@@ -24,3 +24,10 @@ class CDataSet:
             plt.ylabel('Expectativa de vida')
             plt.grid(True)
             plt.show()
+
+    def expectativa_ao_longo_dos_anos(self):
+        self._df_grouped = self._df.groupby('Year')['Life expectancy '].mean()
+        self._df_grouped.plot(title='Expectativa de vida média por ano')
+        plt.ylabel('Expectativa de vida')
+        plt.grid(True)
+        plt.show()
