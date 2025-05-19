@@ -19,8 +19,7 @@ def menu():
         if opcao == '1':
             d.estatisticas_gerais()
         elif opcao == '2':
-            print("Processando...")
-            #d.expectativa_por_pais()
+            d.expectativa_por_pais()
         elif opcao == '3':
             print("Processando...")
             #expectativa_ao_longo_dos_anos()
