@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 class CDataSet:
     def __init__(self):
@@ -30,4 +31,10 @@ class CDataSet:
         self._df_grouped.plot(title='Expectativa de vida média por ano')
         plt.ylabel('Expectativa de vida')
         plt.grid(True)
+        plt.show()
+
+    def comparacao_status(self):
+        sns.boxplot(x='Status', y='Life expectancy ', data=self._df)
+        plt.title('Comparação: Desenvolvido vs. Em Desenvolvimento')
+        plt.ylabel('Expectativa de vida')
         plt.show()
