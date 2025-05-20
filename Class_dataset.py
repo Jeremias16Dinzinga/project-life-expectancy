@@ -56,3 +56,16 @@ class CDataSet:
         print(top[['Country', 'Life expectancy ']].sort_values(by='Life expectancy ', ascending=False).head())
         print("\nTop 5 Países com MENOR expectativa de vida:")
         print(top[['Country', 'Life expectancy ']].sort_values(by='Life expectancy ').head())
+
+    def histograma_variavel(self):
+        variavel = input("Digite o nome da variável (ex: Alcohol, Schooling): ")
+        if variavel not in self._df.columns:
+            print("Variável inválida.")
+            return
+        plt.figure(figsize=(8,5))
+        sns.histplot(self._df[variavel].dropna(), bins=20, kde=True)
+        plt.title(f'Distribuição de {variavel}')
+        plt.xlabel(variavel)
+        plt.ylabel('Frequência')
+        plt.grid(True)
+        plt.show()

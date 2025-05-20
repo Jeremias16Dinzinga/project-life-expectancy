@@ -12,7 +12,11 @@ def menu():
         print("4. Comparar países desenvolvidos vs. em desenvolvimento")
         print("5. Mostrar correlação entre variáveis")
         print("6. Países com maior/menor expectativa de vida em um ano")
-        print("7. Sair")
+        print("7. Histograma de uma variável")
+        print("8. Gráfico de pizza por status")
+        print("9. Comparar dois países")
+        print("10. Top 10 países com maior escolaridade por ano")
+        print("11. Sair")
 
         opcao = input("Escolha uma opção: ")
 
@@ -29,6 +33,17 @@ def menu():
         elif opcao == '6':            
             d.top_paises()
         elif opcao == '7':
+            d.histograma_variavel()
+        elif opcao == '8':
+            print("Processando...")
+            #d.grafico_pizza_status()
+        elif opcao == '9':
+            print("Processando...")
+            #d.comparar_paises()
+        elif opcao == '10':
+            print("Processando...")
+            #d.escolaridade_por_ano()
+        elif opcao == '11':
             print("Encerrando o programa. Até logo!")
             break
         else:
