@@ -34,9 +34,8 @@ def menu():
             d.top_paises()
         elif opcao == '7':
             d.histograma_variavel()
-        elif opcao == '8':
-            print("Processando...")
-            #d.grafico_pizza_status()
+        elif opcao == '8':            
+            d.grafico_pizza_status()
         elif opcao == '9':
             print("Processando...")
             #d.comparar_paises()

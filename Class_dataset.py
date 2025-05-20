@@ -69,3 +69,10 @@ class CDataSet:
         plt.ylabel('Frequência')
         plt.grid(True)
         plt.show()
+    
+    def grafico_pizza_status(self):
+        status_counts = self._df['Status'].value_counts()
+        status_counts.plot.pie(autopct='%1.1f%%', startangle=90, colors=['#66b3ff','#ff9999'])
+        plt.title('Distribuição por Status de Desenvolvimento')
+        plt.ylabel('')
+        plt.show()
