@@ -76,3 +76,31 @@ class CDataSet:
         plt.title('Distribuição por Status de Desenvolvimento')
         plt.ylabel('')
         plt.show()
+
+    def comparar_paises(self):
+        pais1 = input("Digite o nome do primeiro país: ")
+        pais2 = input("Digite o nome do segundo país: ")
+        df1 = self._df[self._df['Country'] == pais1]
+        df2 = self._df[self._df['Country'] == pais2]
+        if df1.empty or df2.empty:
+            print("Um ou ambos os países não foram encontrados.")
+            return
+        plt.plot(df1['Year'], df1['Life expectancy '], label=pais1)
+        plt.plot(df2['Year'], df2['Life expectancy '], label=pais2)
+        plt.title('Comparação de Expectativa de Vida')
+        plt.xlabel('Ano')
+        plt.ylabel('Expectativa de vida')
+        plt.legend()
+        plt.grid(True)
+        plt.show()
+    
+    def escolaridade_por_ano(self):
+        ano = int(input("Digite o ano: "))
+        dados = self._df[self._df['Year'] == ano]
+        top10 = dados[['Country', 'Schooling']].sort_values(by='Schooling', ascending=False).head(10)
+        sns.barplot(data=top10, x='Schooling', y='Country', palette='viridis')
+        plt.title(f'Top 10 países com maior escolaridade em {ano}')
+        plt.xlabel('Anos de Escolaridade')
+        plt.ylabel('País')
+        plt.grid(True)
+        plt.show()

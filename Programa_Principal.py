@@ -36,12 +36,10 @@ def menu():
             d.histograma_variavel()
         elif opcao == '8':            
             d.grafico_pizza_status()
-        elif opcao == '9':
-            print("Processando...")
-            #d.comparar_paises()
-        elif opcao == '10':
-            print("Processando...")
-            #d.escolaridade_por_ano()
+        elif opcao == '9':            
+            d.comparar_paises()
+        elif opcao == '10':            
+            d.escolaridade_por_ano()
         elif opcao == '11':
             print("Encerrando o programa. Até logo!")
             break
