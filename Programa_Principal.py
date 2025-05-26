@@ -1,50 +1,38 @@
 
-from Class_dataset import *
+from Menus import *
+m = Menu()
 
-d = CDataSet()
-
-def menu():
+def menu_principal():
     while True:
-        print("\n===== MENU DE ANÁLISE =====")
-        print("1. Estatísticas gerais")
-        print("2. Expectativa de vida por país")
-        print("3. Expectativa de vida ao longo dos anos")
-        print("4. Comparar países desenvolvidos vs. em desenvolvimento")
-        print("5. Mostrar correlação entre variáveis")
-        print("6. Países com maior/menor expectativa de vida em um ano")
-        print("7. Histograma de uma variável")
-        print("8. Gráfico de pizza por status")
-        print("9. Comparar dois países")
-        print("10. Top 10 países com maior escolaridade por ano")
-        print("11. Sair")
+        print("\n========= MENU PRINCIPAL =========")
+        print("1. Gráficos de Linha")
+        print("2. Gráficos de Barras")
+        print("3. Gráficos de Pizza")
+        print("4. Histogramas")
+        print("5. Mapas de Correlação")
+        print("6. Estatísticas e Tabelas")
+        print("7. Sair")
 
         opcao = input("Escolha uma opção: ")
 
         if opcao == '1':
-            d.estatisticas_gerais()
+            m.submenu_graficos_linha()
         elif opcao == '2':
-            d.expectativa_por_pais()
-        elif opcao == '3':            
-            d.expectativa_ao_longo_dos_anos()
-        elif opcao == '4':            
-            d.comparacao_status()
-        elif opcao == '5':        
-            d.correlacoes()
-        elif opcao == '6':            
-            d.top_paises()
+            m.submenu_barras()
+        elif opcao == '3':
+            m.submenu_pizza()
+        elif opcao == '4':
+            m.submenu_histogramas()
+        elif opcao == '5':
+            m.submenu_correlacoes()
+        elif opcao == '6':
+            m.submenu_estatisticas()
         elif opcao == '7':
-            d.histograma_variavel()
-        elif opcao == '8':            
-            d.grafico_pizza_status()
-        elif opcao == '9':            
-            d.comparar_paises()
-        elif opcao == '10':            
-            d.escolaridade_por_ano()
-        elif opcao == '11':
             print("Encerrando o programa. Até logo!")
             break
         else:
             print("Opção inválida. Tente novamente.")
-menu()
+
+menu_principal()
 
 
