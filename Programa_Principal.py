@@ -11,7 +11,9 @@ def menu_principal():
         print("4. Histogramas")
         print("5. Mapas de Correlação")
         print("6. Estatísticas e Tabelas")
-        print("7. Sair")
+        print("7. Gerar relatório Word")
+        print("8. Converter relatório para PDF")
+        print("9. Sair")
 
         opcao = input("Escolha uma opção: ")
 
@@ -28,6 +30,10 @@ def menu_principal():
         elif opcao == '6':
             m.submenu_estatisticas()
         elif opcao == '7':
+            m.relatorio.gerar_word()
+        elif opcao == '8':
+            m.relatorio.converter_para_pdf()
+        elif opcao == '9':
             print("Encerrando o programa. Até logo!")
             break
         else:

@@ -172,3 +172,26 @@ class CDataSet:
         vac = self._df[['Country', 'Year', 'Hepatitis B']].sort_values(by='Hepatitis B', ascending=False).head(1)
         print("\nPaís com maior vacinação infantil (Hepatite B):")
         print(vac)
+
+    def estatisticas_por_pais(self):
+        pais = input("Digite o nome do país: ")
+        dados = self._df[self._df['Country'] == pais]
+        if dados.empty:
+            print("País não encontrado.")
+        else:
+            print(f"\nEstatísticas descritivas para {pais}:")
+            print(dados.describe())
+
+    def media_expectativa_por_status(self):
+        medias = self._df.groupby('Status')['Life expectancy '].mean()
+        print("\nMédia de Expectativa de Vida por Status de Desenvolvimento:")
+        print(medias)
+    
+    def extremos_expectativa_media(self):
+        medias = self._df.groupby('Country')['Life expectancy '].mean()
+        maior = medias.idxmax()
+        menor = medias.idxmin()
+        print(f"\nPaís com MAIOR expectativa de vida média: {maior} ({medias[maior]:.2f})")
+        print(f"País com MENOR expectativa de vida média: {menor} ({medias[menor]:.2f})")
+
+

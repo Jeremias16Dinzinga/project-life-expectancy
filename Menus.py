@@ -1,8 +1,10 @@
 from Classe_dataset import *
+from Classe_Relatorio import *
 
 d = CDataSet()
 
 class Menu:
+    relatorio = Relatorio(d)
 
     def submenu_graficos_linha(self):
         while True:
@@ -101,10 +103,13 @@ class Menu:
     def submenu_estatisticas(self):
         while True:
             print("\n--- ESTATÍSTICAS E TABELAS ---")
-            print("1 Estatísticas descritivas do dataset")
-            print("2 Países com maior e menor expectativa de vida por ano")
-            print("3 País com maior gasto em saúde")
-            print("4 País com maior vacinação infantil")
+            print("1. Estatísticas descritivas do dataset")
+            print("2. Países com maior e menor expectativa de vida por ano")
+            print("3. País com maior gasto em saúde")
+            print("4. País com maior vacinação infantil")
+            print("5. Estatísticas descritivas por país")
+            print("6. Média de expectativa de vida por status de desenvolvimento")
+            print("7. País com maior e menor expectativa de vida média (geral)")
             print("0. Voltar ao menu principal")
 
             opcao = input("Escolha uma opção: ")
@@ -116,10 +121,17 @@ class Menu:
                 d.maior_gasto_saude()
             elif opcao == '4':
                 d.maior_vacinacao()
+            elif opcao == '5':
+                d.estatisticas_por_pais()
+            elif opcao == '6':
+                d.media_expectativa_por_status()
+            elif opcao == '7':
+                d.extremos_expectativa_media()
             elif opcao == '0':
                 break
             else:
                 print("Opção inválida.")
+
 
 
 

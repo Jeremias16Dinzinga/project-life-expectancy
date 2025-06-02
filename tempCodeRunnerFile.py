@@ -1,1 +1,0 @@
-grafico_pizza_status
