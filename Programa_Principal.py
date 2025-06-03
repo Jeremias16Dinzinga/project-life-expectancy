@@ -29,10 +29,10 @@ def menu_principal():
             m.submenu_correlacoes()
         elif opcao == '6':
             m.submenu_estatisticas()
-        elif opcao == '7':
+        elif opcao == '7':            
             m.relatorio.gerar_word()
         elif opcao == '8':
-            m.relatorio.converter_para_pdf()
+             m.relatorio.converter_para_pdf()            
         elif opcao == '9':
             print("Encerrando o programa. Até logo!")
             break

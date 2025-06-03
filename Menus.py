@@ -1,5 +1,7 @@
-from Classe_dataset import *
-from Classe_Relatorio import *
+from Classe_Relatorio import Relatorio
+from Classe_dataset import CDataSet
+
+
 
 d = CDataSet()
 

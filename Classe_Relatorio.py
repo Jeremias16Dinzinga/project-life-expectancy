@@ -1,11 +1,12 @@
 from docx import Document
 from docx.shared import Inches
 import pandas as pd
+import matplotlib
+#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
-import matplotlib
 from datetime import datetime
-matplotlib.use('Agg')
+
 
 class Relatorio:
     def __init__(self, dataset):
